@@ -71,7 +71,7 @@ body {
 @media (max-width: 480px) {
     #calendar {
         grid-template-columns: repeat(3, 60px); /* Vielä vähemmän sarakkeita pienille näytöille */
-        grid-gap: 6px;
+        grid-gap: 20px;
     }
 
     .door {
