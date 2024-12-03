@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('dinosaur-landscape.webp') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(6, 100px); /* Oletus: 6 saraketta */
+    grid-gap: 10px;
+    padding: 20px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.door {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    width: 100px;
+    height: 100px;
+    border: 2px dashed white;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    text-align: center;
+}
+
+.door:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.7);
+    color: black;
+}
+
+.door.locked {
+    cursor: not-allowed;
+    opacity: 0.5;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.door.locked:hover {
+    transform: none;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+}
+
+/* Responsiivisuus mobiililaitteille */
+@media (max-width: 768px) {
+    #calendar {
+        grid-template-columns: repeat(4, 80px); /* Pienennetään sarakkeiden määrää ja kokoa */
+        grid-gap: 8px;
+    }
+
+    .door {
+        width: 80px;
+        height: 80px;
+        font-size: 18px; /* Pienempi fonttikoko */
+    }
+}
+
+@media (max-width: 480px) {
+    #calendar {
+        grid-template-columns: repeat(3, 60px); /* Vielä vähemmän sarakkeita pienille näytöille */
+        grid-gap: 6px;
+    }
+
+    .door {
+        width: 60px;
+        height: 60px;
+        font-size: 14px; /* Pienempi fonttikoko */
+    }
+}
